@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation = "http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="greet" class="com.example.Greeting">
+ <property name="message" value="Good morning"/>
+ </bean>
+<bean id="wel" class="com.example.Welcome">
+ <property name="welcomeMsg" value="welcome in our home"/>
+ </bean>
+ 
+ <bean id="InjectwithConstructor" class="com.example.WelcomGuest">
+    <constructor-arg name="greeting" ref="greet"/>
+    <constructor-arg name="welcome" ref="wel"/>
+</bean>
+
+ <bean id="InjectwithSetter" class="com.example.WelcomGuest">
+    <property name="greeting" ref="greet"/>
+    <property name="welcome" ref="wel"/>
+</bean>
+</beans>
